@@ -405,6 +405,10 @@ section.faq>.eyebrow {
    color: #007AFF !important;
 }
 
+.button.full {
+   color: green !important;
+}
+
 .button.cancel span.material-symbols-outlined {
    font-size: 20px !important;
    height: 18px !important;
