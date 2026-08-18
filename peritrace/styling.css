@@ -188,19 +188,18 @@ header {
 }
 
 /* ---------- FAQ list ---------- */
-section.faq {
+section {
    margin-top: 20px;
    margin-bottom: 64px;
 }
 
-section.faq>h2 {
+section>h2 {
    font-size: 1.5rem;
    margin: 0 0 6px;
 }
 
-section.faq>.eyebrow {
+section>.eyebrow {
    display: block;
-   margin-bottom: 8px;
 }
 
 .faq-list {
@@ -480,20 +479,6 @@ section.faq>.eyebrow {
 }
 
 /* ---------- contact form ---------- */
-section.contact {
-   margin: 40px 0 40px;
-}
-
-section.contact h2 {
-   font-size: 1.5rem;
-   margin: 0 0 6px;
-}
-
-section.contact>p {
-   color: var(--ink-soft);
-   margin: 0 0 28px;
-   max-width: 50ch;
-}
 
 .ticket {
    background: var(--card);
@@ -610,6 +595,14 @@ section.contact>p {
    display: block;
 }
 
+
+/* ---------- social media ---------- */
+.social-links img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
 footer {
    margin-top: 70px;
    padding-top: 24px;
@@ -683,7 +676,7 @@ footer {
 @media (min-width: 1600px) {
    .summary-grid {
       grid-template-columns: none;
-      grid-auto-flow: column; 
+      grid-auto-flow: column;
       grid-auto-columns: minmax(150px, 1fr);
    }
 }
@@ -716,153 +709,138 @@ footer {
 
 
 /* ---------- policy accordion (mirrors FAQ pattern) ---------- */
-    section.policy {
-      margin-top: 20px;
-      margin-bottom: 64px;
-    }
+.policy-list {
+   margin-top: 28px;
+   border-top: 1px solid var(--line-strong);
+}
 
-    section.policy > h2 {
-      font-size: 1.5rem;
-      margin: 0 0 6px;
-    }
+.policy-item {
+   border-bottom: 1px solid var(--line-strong);
+   position: relative;
+}
 
-    section.policy > .eyebrow {
-      display: block;
-      margin-bottom: 8px;
-    }
+.policy-item::before {
+   content: "";
+   position: absolute;
+   left: -1px;
+   top: 0;
+   width: 10px;
+   height: 10px;
+   background: var(--paper);
+   border-right: 1px solid var(--line-strong);
+   border-bottom: 1px solid var(--line-strong);
+   transform: translateY(-50%) rotate(45deg);
+}
 
-    .policy-list {
-      margin-top: 28px;
-      border-top: 1px solid var(--line-strong);
-    }
+.policy-q {
+   all: unset;
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   width: 100%;
+   padding: 22px 6px 22px 26px;
+   cursor: pointer;
+   box-sizing: border-box;
+}
 
-    .policy-item {
-      border-bottom: 1px solid var(--line-strong);
-      position: relative;
-    }
+.policy-q:focus-visible {
+   outline: 2px solid var(--chalk);
+   outline-offset: 2px;
+}
 
-    .policy-item::before {
-      content: "";
-      position: absolute;
-      left: -1px;
-      top: 0;
-      width: 10px;
-      height: 10px;
-      background: var(--paper);
-      border-right: 1px solid var(--line-strong);
-      border-bottom: 1px solid var(--line-strong);
-      transform: translateY(-50%) rotate(45deg);
-    }
+.policy-tag {
+   font-family: 'IBM Plex Mono', monospace;
+   font-size: 0.72rem;
+   color: var(--thread);
+   letter-spacing: 0.06em;
+   flex: 0 0 auto;
+   padding-top: 2px;
+}
 
-    .policy-q {
-      all: unset;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      width: 100%;
-      padding: 22px 6px 22px 26px;
-      cursor: pointer;
-      box-sizing: border-box;
-    }
+.policy-q-text {
+   font-family: 'Space Grotesk', sans-serif;
+   font-weight: 600;
+   font-size: 1.06rem;
+   flex: 1 1 auto;
+}
 
-    .policy-q:focus-visible {
-      outline: 2px solid var(--chalk);
-      outline-offset: 2px;
-    }
+.policy-marker {
+   flex: 0 0 auto;
+   width: 18px;
+   height: 18px;
+   position: relative;
+}
 
-    .policy-tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--thread);
-      letter-spacing: 0.06em;
-      flex: 0 0 auto;
-      padding-top: 2px;
-    }
+.policy-marker::before,
+.policy-marker::after {
+   content: "";
+   position: absolute;
+   background: var(--ink);
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transition: transform 0.25s ease, opacity 0.2s ease;
+}
 
-    .policy-q-text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 1.06rem;
-      flex: 1 1 auto;
-    }
+.policy-marker::before {
+   width: 14px;
+   height: 2px;
+}
 
-    .policy-marker {
-      flex: 0 0 auto;
-      width: 18px;
-      height: 18px;
-      position: relative;
-    }
+.policy-marker::after {
+   width: 2px;
+   height: 14px;
+}
 
-    .policy-marker::before,
-    .policy-marker::after {
-      content: "";
-      position: absolute;
-      background: var(--ink);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: transform 0.25s ease, opacity 0.2s ease;
-    }
+.policy-item.open .policy-marker::after {
+   transform: translate(-50%, -50%) rotate(90deg);
+   opacity: 0;
+}
 
-    .policy-marker::before {
-      width: 14px;
-      height: 2px;
-    }
+.policy-item.open .policy-marker::before {
+   background: var(--thread);
+}
 
-    .policy-marker::after {
-      width: 2px;
-      height: 14px;
-    }
+.policy-a-wrap {
+   display: grid;
+   grid-template-rows: 0fr;
+   transition: grid-template-rows 0.32s ease;
+}
 
-    .policy-item.open .policy-marker::after {
-      transform: translate(-50%, -50%) rotate(90deg);
-      opacity: 0;
-    }
+.policy-item.open .policy-a-wrap {
+   grid-template-rows: 1fr;
+}
 
-    .policy-item.open .policy-marker::before {
-      background: var(--thread);
-    }
+.policy-a-inner {
+   overflow: hidden;
+}
 
-    .policy-a-wrap {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.32s ease;
-    }
+.policy-a {
+   padding: 0 6px 28px 26px;
+   color: var(--ink-soft);
+   font-size: 0.98rem;
+   border-top: 1px dashed var(--line-strong);
+   margin-top: -1px;
+   padding-top: 18px;
+}
 
-    .policy-item.open .policy-a-wrap {
-      grid-template-rows: 1fr;
-    }
+.policy-a p {
+   margin: 0 0 12px;
+}
 
-    .policy-a-inner {
-      overflow: hidden;
-    }
+.policy-a p:last-child {
+   margin-bottom: 0;
+}
 
-    .policy-a {
-      padding: 0 6px 28px 26px;
-      color: var(--ink-soft);
-      font-size: 0.98rem;
-      border-top: 1px dashed var(--line-strong);
-      margin-top: -1px;
-      padding-top: 18px;
-    }
+.policy-a ul {
+   margin: 0 0 14px;
+   padding-left: 20px;
+}
 
-    .policy-a p {
-      margin: 0 0 12px;
-    }
+.policy-a li {
+   margin-bottom: 8px;
+}
 
-    .policy-a p:last-child {
-      margin-bottom: 0;
-    }
-
-    .policy-a ul {
-      margin: 0 0 14px;
-      padding-left: 20px;
-    }
-
-    .policy-a li {
-      margin-bottom: 8px;
-    }
-
-    .policy-a strong {
-      color: var(--ink);
-    }
+.policy-a strong {
+   color: var(--ink);
+}
