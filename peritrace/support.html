@@ -112,6 +112,12 @@
                 </p>
                 <p>In the camera view, move your phone slowly back and forth over a flat, horizontal surface until the
                   reticle appears flat on the surface. You now can start tracing your pattern piece.</p>
+
+                <div class="sub-note important">
+                  <p><strong><i><u>Important:</u></i> </strong></p>
+                  <p>The reticle must be perfectly flat on the surface for accurate tracing.</p>
+                </div>
+
                 <p><strong><i><u>The current version of the app supports 2 tracing modes:</u></i> </strong></p>
                 <ul>
                   <li><strong>Vertex tracing:</strong> Aim the reticle at the outline or seam line and tap the Trace
@@ -134,9 +140,9 @@
                   <ul>
                     <li>
                       <p><strong>Activate contour detection:</strong> point the camera at a pattern piece and long-press
-                        the pattern (for at least 0.5 seconds) to capture the outline's vertices. It may take a moment
-                        to
-                        capture the outline; moving your finger or releasing the press early will cancel the detection.
+                        the pattern piece (for at least 0.5 seconds) to capture the outline's vertices. It may take a
+                        moment to capture the outline; moving your finger or releasing the press early will cancel the
+                        detection.
                       </p>
                     </li>
                     <li>
@@ -206,12 +212,20 @@
           <div class="faq-a-wrap">
             <div class="faq-a-inner">
               <div class="faq-a">
-                <p>When tracing a pattern piece, you can undo your last action by tapping the Undo <span class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> button at the bottom right of the screen.</p>
-                <p>You can also redo the undone action by tapping the Redo <span class="button btn-circle redo"><span class="material-symbols-outlined">redo</span></span> button next to the Undo <span class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> button.</p>
+                <p>When tracing a pattern piece, you can undo your last action by tapping the Undo <span
+                    class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> button at
+                  the bottom right of the screen.</p>
+                <p>You can also redo the undone action by tapping the Redo <span class="button btn-circle redo"><span
+                      class="material-symbols-outlined">redo</span></span> button next to the Undo <span
+                    class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> button.
+                </p>
 
                 <div class="sub-note">
                   <p><strong><i><u>Undo/Redo all trace actions:</u></i> </strong></p>
-                  <p>Long-press the Undo or Redo <span class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> <span class="button btn-circle redo"><span class="material-symbols-outlined">redo</span></span> button for 1.5 seconds to undo or redo all trace actions.</p>
+                  <p>Long-press the Undo or Redo <span class="button btn-circle undo"><span
+                        class="material-symbols-outlined">undo</span></span> <span class="button btn-circle redo"><span
+                        class="material-symbols-outlined">redo</span></span> button for 1.5 seconds to undo or redo all
+                    trace actions.</p>
                 </div>
 
                 <div class="sub-note important">
@@ -437,20 +451,32 @@
   </div>
 
   <script>
-    // Accordion: only one open at a time
+    //  only one open at a time
+    // const items = document.querySelectorAll('.faq-item');
+    // items.forEach(item => {
+    //   const btn = item.querySelector('.faq-q');
+    //   btn.addEventListener('click', () => {
+    //     const isOpen = item.classList.contains('open');
+    //     items.forEach(i => {
+    //       i.classList.remove('open');
+    //       i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    //     });
+    //     if (!isOpen) {
+    //       item.classList.add('open');
+    //       btn.setAttribute('aria-expanded', 'true');
+    //     }
+    //   });
+    // });
+
+    //  Open multiple at a time
     const items = document.querySelectorAll('.faq-item');
     items.forEach(item => {
       const btn = item.querySelector('.faq-q');
       btn.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
-        items.forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
+        
+        item.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
       });
     });
 

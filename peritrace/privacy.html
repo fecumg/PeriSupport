@@ -284,20 +284,32 @@
   </div>
 
   <script>
-    // Accordion: only one open at a time
+    //  only one open at a time
+    // const policyItems = document.querySelectorAll('.policy-item');
+    // policyItems.forEach(item => {
+    //   const btn = item.querySelector('.policy-q');
+    //   btn.addEventListener('click', () => {
+    //     const isOpen = item.classList.contains('open');
+    //     policyItems.forEach(i => {
+    //       i.classList.remove('open');
+    //       i.querySelector('.policy-q').setAttribute('aria-expanded', 'false');
+    //     });
+    //     if (!isOpen) {
+    //       item.classList.add('open');
+    //       btn.setAttribute('aria-expanded', 'true');
+    //     }
+    //   });
+    // });
+
+    //  Open multiple at a time
     const policyItems = document.querySelectorAll('.policy-item');
     policyItems.forEach(item => {
       const btn = item.querySelector('.policy-q');
       btn.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
-        policyItems.forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.policy-q').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
+
+        item.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
       });
     });
   </script>

@@ -12,7 +12,7 @@
    --card-destructive: #FF0800;
    --radius: 2px;
    --opacity: 0.7;
-   --side-art-opacity: 0.3;
+   --side-art-opacity: 0.2;
 }
 
 * {
@@ -204,11 +204,11 @@ section>.eyebrow {
 
 .faq-list {
    margin-top: 28px;
-   border-top: 1px solid var(--line-strong);
+   border-top: 1.5px solid var(--thread);
 }
 
 .faq-item {
-   border-bottom: 1px solid var(--line-strong);
+   border-bottom: 1.5px solid var(--thread);
    position: relative;
 }
 
@@ -221,8 +221,8 @@ section>.eyebrow {
    width: 10px;
    height: 10px;
    background: var(--paper);
-   border-right: 1px solid var(--line-strong);
-   border-bottom: 1px solid var(--line-strong);
+   border-right: 1.5px solid var(--thread);
+   border-bottom: 1.5px solid var(--thread);
    transform: translateY(-50%) rotate(45deg);
 }
 
@@ -253,8 +253,8 @@ section>.eyebrow {
 
 .faq-q-text {
    font-family: 'Space Grotesk', sans-serif;
-   font-weight: 600;
-   font-size: 1.06rem;
+   font-weight: 800;
+   font-size: 1.08rem;
    flex: 1 1 auto;
 }
 
@@ -711,11 +711,11 @@ footer {
 /* ---------- policy accordion (mirrors FAQ pattern) ---------- */
 .policy-list {
    margin-top: 28px;
-   border-top: 1px solid var(--line-strong);
+   border-top: 1.5px solid var(--thread);
 }
 
 .policy-item {
-   border-bottom: 1px solid var(--line-strong);
+   border-bottom: 1.5px solid var(--thread);
    position: relative;
 }
 
@@ -727,8 +727,8 @@ footer {
    width: 10px;
    height: 10px;
    background: var(--paper);
-   border-right: 1px solid var(--line-strong);
-   border-bottom: 1px solid var(--line-strong);
+   border-right: 1.5px solid var(--thread);
+   border-bottom: 1.5px solid var(--thread);
    transform: translateY(-50%) rotate(45deg);
 }
 
@@ -759,8 +759,8 @@ footer {
 
 .policy-q-text {
    font-family: 'Space Grotesk', sans-serif;
-   font-weight: 600;
-   font-size: 1.06rem;
+   font-weight: 800;
+   font-size: 1.08rem;
    flex: 1 1 auto;
 }
 
