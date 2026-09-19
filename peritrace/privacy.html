@@ -34,7 +34,7 @@
       <h1>PeriTrace <span style="white-space: nowrap;">privacy policy</span></h1>
       <p>PeriTrace operates entirely on your device. We do not maintain external servers, collect data, or share
         information with third parties.</p>
-      <p class="updated-tag">Last updated: July 6, 2026</p>
+      <p class="updated-tag">Last updated: September 19, 2026</p>
       <span class="stitch" aria-hidden="true"></span>
     </header>
 
@@ -48,13 +48,11 @@
         </div>
         <div class="summary-item">
           <span class="material-symbols-outlined">database_off</span>
-          <span class="txt"><strong>No data collection</strong>We don't collect, store, or transmit personal
-            data.</span>
+          <span class="txt"><strong>No data collection</strong>We don't collect, store, or transmit personal data. Pattern data and captured images remain locally on your device.</span>
         </div>
         <div class="summary-item">
           <span class="material-symbols-outlined">videocam</span>
-          <span class="txt"><strong>Camera, on-device only</strong>Used solely for AR tracing. Camera data is never
-            recorded or transmitted anywhere.</span>
+          <span class="txt"><strong>Camera, on-device only</strong>Used for AR tracing and automatic contour detection. Camera processing and captured images remain on your device and are not transmitted to any third party by the app.</span>
         </div>
         <div class="summary-item">
           <span class="material-symbols-outlined">group_off</span>
@@ -80,15 +78,23 @@
           <div class="policy-a-wrap">
             <div class="policy-a-inner">
               <div class="policy-a">
-                <p><strong>Nothing.</strong> PeriTrace operates entirely without a backend server, user accounts, or
+                <p>
+                  <strong>We do not collect personal data.</strong> PeriTrace operates entirely without a backend server, user accounts, or
                   analytics and crash-reporting services embedded in the app. Consequently, no personal
                   information—including names, email addresses, precise locations, device identifiers, or usage
                   statistics—is collected or stored. All application operations remain strictly local to your device.
                 </p>
-                <p>The only exception occurs if you choose to <strong>email us directly</strong> through the support
+                <p>
+                  PeriTrace may create and store <strong>pattern data and captured images on your device</strong> when
+                  you use the app. These files are part of your locally stored PeriTrace data and are not transmitted to
+                  us or to any third party by the app.
+                </p>
+                <p>
+                  The only exception occurs if you choose to <strong>email us directly</strong> through the support
                   page's contact form — that opens your own mail app and sends a message from your own email address to
                   ours. That message is handled like any other email you send, and only exists because you chose to send
-                  it.</p>
+                  it.
+                </p>
               </div>
             </div>
           </div>
@@ -110,16 +116,23 @@
                 <ul>
                   <li>The camera feed is processed <strong>entirely on your device</strong> using Apple's ARKit
                     framework.</li>
-                  <li>PeriTrace does <strong>not</strong> record, save, or transmit the camera feed or any video/image
-                    frames.</li>
-                  <li>Only the geometry you actively capture (vertices and marks you place while tracing) is kept, and
-                    it's stored as part of your pattern data — not as an image or video.</li>
+                  <li>PeriTrace does <strong>not continuously record or transmit</strong> the camera feed.</li>
+                  <li>During <strong>automatic contour detection</strong>, PeriTrace may capture a high-resolution still
+                    image of the pattern piece. This image is processed entirely on your device to assist with contour
+                    detection and may be saved as part of the corresponding pattern piece.</li>
+                  <li>Captured images remain <strong>locally on your device</strong> and are not transmitted to
+                    PeriTrace, Twill &amp; Thrills, or any third-party service by the app.</li>
+                  <li>You can choose whether captured images are shown and included in exported files using the image
+                    visibility option in the canvas menu.</li>
+                  <li>Geometry you actively capture while tracing, such as vertices and marks, is also stored locally as
+                    part of your pattern data.</li>
                   <li>You can revoke camera access at any time in
                     <br>
                     <strong>iOS Settings → PeriTrace → Camera</strong>.
                     <br>
-                    Without it, the tracing feature won't work, but the rest of the app (pattern management and canvas -
-                    where pattern pieces are viewed and organized) will.
+                    Without camera access, camera-based tracing and automatic contour detection won't work, but the rest
+                    of the app (pattern management and canvas — where pattern pieces are viewed and organized) will
+                    remain available.
                   </li>
                 </ul>
               </div>
@@ -137,13 +150,12 @@
           <div class="policy-a-wrap">
             <div class="policy-a-inner">
               <div class="policy-a">
-                <p>All patterns, pieces, and exported files you create in PeriTrace are stored <strong>locally on your
-                    iPhone</strong>.</p>
+                <p>All patterns, pieces, <strong>captured pattern images</strong>, and exported files you create in PeriTrace are stored <strong>locally on your iPhone</strong>.</p>
                 <p>Saved files are stored locally in:
                   <br>
                   <strong>On My iPhone → PeriTrace → Saves</strong>
                   <br>
-                  in the proprietary .peri format
+                  in the proprietary .peri format. Captured images associated with pattern pieces are stored within the same PeriTrace Saves folder. These files are not transmitted to us or any third party by the app.
                 </p>
                 <p>Exported files are automatically saved to:
                   <br>
@@ -212,7 +224,7 @@
                 <ul>
                   <li><strong>Camera permission:</strong> grant or revoke anytime in iOS Settings.</li>
                   <li><strong>Your patterns:</strong> live exclusively on your device. You can delete them at any time
-                    from within PeriTrace or manually via the iOS Files app. There's no cloud-based copies on our
+                    from within PeriTrace or manually via the iOS Files app. There are no cloud-based copies on our
                     infrastructure to also delete.</li>
                   <li><strong>Uninstalling the app:</strong> permanently removes all locally stored PeriTrace data from
                     your device (aside from any files you've separately exported or backed up elsewhere). However, to
