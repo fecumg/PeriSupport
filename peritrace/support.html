@@ -33,9 +33,9 @@
     <header class="page-header">
       <h1>Need a hand with <span style="white-space: nowrap;">PeriTrace?</span></h1>
       <p>We're here to help you get the most out of your PeriTrace experience.</p>
-      <p class="updated-tag">Last updated: September 19, 2026
+      <p class="updated-tag">Last updated: October 29, 2026
         <br>
-        <strong>for version 1.1</strong>
+        <strong>for version 1.2</strong>
       </p>
       <span class="stitch" aria-hidden="true"></span>
     </header>
@@ -57,9 +57,10 @@
             <div class="faq-a-inner">
               <div class="faq-a">
                 <p>PeriTrace requires an iPhone that supports ARKit.</p>
-                <p>iPhone models with <strong>LiDAR</strong> are <strong>strongly recommended</strong> for significantly
-                  more precise captures and a smoother experience.</p>
+                <p>iPhone models equipped with <strong>LiDAR</strong> are <strong>strongly recommended</strong> for
+                  more accurate tracing and a smoother experience.</p>
                 <p>PeriTrace supports <strong>iOS 18.6 and later</strong>.</p>
+                <p>Version 1.2 introduces support for iPhone Duo and landscape orientation.</p>
               </div>
             </div>
           </div>
@@ -121,11 +122,12 @@
                   <p><strong><i><u>IMPORTANT:</u></i> </strong></p>
                   <p><strong><i><u>* The reticle must be perfectly flat on the surface for accurate tracing.</u></i>
                     </strong></p>
-                  <p>iPhone models with <strong>LiDAR</strong> are <strong>strongly recommended</strong> for
-                    significantly more precise captures and a smoother experience.</p>
+                  <p>iPhone models with <strong>LiDAR</strong> are <strong>strongly recommended</strong> for more
+                    accurate tracing and a smoother experience.</p>
                 </div>
 
-                <p><strong><i><u>The current version of the app supports two tracing features:</u></i> </strong></p>
+                <p><strong><i><u>The current version of the app supports two manual tracing features:</u></i> </strong>
+                </p>
                 <ul>
                   <li><strong>Vertex tracing:</strong> Aim the reticle at the outline or seam line and tap the Trace
                     Vertices <span class="button btn-capsule"><img src="images/Peri_Vertices.png" width="20"
@@ -140,26 +142,6 @@
                     marks.
                   </li>
                 </ul>
-                <div class="sub-note important">
-                  <p><strong><i><u>NOTES:</u></i> </strong></p>
-                  <p><strong><i><u>* Optimizing camera position and angle:</u></i> </strong></p>
-                  <p>PeriTrace uses AR to make pattern tracing effortless. You do not need to point the camera perfectly
-                    perpendicular to the surface.</p>
-                  <p>However, iPhone models without LiDAR can sometimes struggle with surface calibration, which may
-                    cause
-                    captured contours and points to drift.</p>
-                  <p>To maximize precision, follow these best practices:</p>
-                  <ul>
-                    <li>
-                      <p><strong>Maintain distance:</strong> Keep your iPhone between ~0.5 and ~2 meters directly above
-                        the pattern.</p>
-                    </li>
-                    <li>
-                      <p><strong>Verify calibration:</strong> Ensure the reticle perfectly aligns with your physical
-                        surface before tracing.</p>
-                    </li>
-                  </ul>
-                </div>
                 <br>
                 <p><strong><i><u>Finishing or Cancelling a Trace:</u></i> </strong></p>
                 <ul>
@@ -190,25 +172,78 @@
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
             <span class="faq-tag">Q04</span>
+            <span class="faq-q-text">How do I capture images of a traced polygon?</span>
+            <span class="faq-marker" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a-wrap">
+            <div class="faq-a-inner">
+              <div class="faq-a">
+                <p><strong>Manual high-resolution image capture:</strong> Version 1.2 introduces the ability to capture
+                  high-resolution images of the area enclosed by a traced polygon.</p>
+                <ul>
+                  <li>
+                    <p><strong>Availability:</strong> Image capture is available during manual tracing once at least 3
+                      vertices have been traced to form a polygon. The Capture <span
+                        class="button btn-capsule btn-capsule-soft"><img src="images/Peri_Capture.png" width="15"
+                          alt="Capture" /></span> button is disabled after automatic contour detection. Image capture is
+                      also unavailable for a self-intersecting polygon.
+                    </p>
+                  </li>
+                  <li>
+                    <p><strong>Image capture:</strong> The Capture <span
+                        class="button btn-capsule btn-capsule-soft"><img src="images/Peri_Capture.png" width="15"
+                          alt="Capture" /></span> button allows you to capture up to 10 high-resolution images of
+                      different areas within the polygon. The captured region is highlighted in semi-transparent red.
+                      The images will then be processed and merged into a single image.</p>
+                  </li>
+                </ul>
+                <div class="sub-note important">
+                  <p><strong><i><u>NOTES:</u></i> </strong></p>
+                  <ul>
+                    <li>
+                      <p>The traced polygon must not intersect itself. A valid polygon is filled with a semi-transparent color that adapts to the system appearance.</p>
+                    </li>
+                    <li>
+                      <p>You can continue tracing more vertices after capturing images. The captured region will be
+                        recalculated accordingly. If the polygon becomes self-intersecting, its fill will disappear and
+                        the captured images will be discarded.</p>
+                    </li>
+                    <li>
+                      <p>Unlike automatic image capture performed during contour detection, manual image capture plays a shutter sound.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-tag">Q05</span>
             <span class="faq-q-text">How do I trace a pattern piece automatically?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </button>
           <div class="faq-a-wrap">
             <div class="faq-a-inner">
               <div class="faq-a">
-                <strong>Contour detection:</strong> PeriTrace features automatic pattern contour detection as part of
-                Vertex Tracing feature. It automatically detects the outline of a pattern piece and quickly plots
+                <strong>Contour detection:</strong> PeriTrace automatically detects the outline of a pattern piece and
+                quickly plots
                 simplified vertices.
                 <ul>
                   <li>
                     <p><strong>Activate contour detection:</strong> Point the camera at a pattern piece and long-press
-                      the pattern piece (for at least 0.5 seconds) to capture the outline's vertices. It may take a
+                      the piece (for at least 0.5 seconds) to capture the outline's vertices. It may take a
                       moment to capture the outline; moving your finger or releasing the press early will cancel the
                       detection.
                     </p>
                   </li>
                   <li>
-                    <p><strong>One at a time:</strong> The app can only detect one outline at a time.</p>
+                    <p><strong>One contour at a time:</strong> PeriTrace can only detect one outline at a time. Before
+                      detecting another pattern piece, you must undo the previous contour detection or any manual traced
+                      vertices. The Trace Vertices <span class="button btn-capsule"><img src="images/Peri_Vertices.png"
+                          width="20" alt="Trace Vertices" /></span> button is disabled after a contour is detected.</p>
                   </li>
                   <li>
                     <p><strong>High contrast:</strong> The pattern piece must contrast significantly with the
@@ -217,14 +252,14 @@
                   </li>
                 </ul>
                 <div class="sub-note">
-                  <p><strong>High-resolution image capture:</strong></p>
-                  <p>From version 1.1, PeriTrace can automatically capture a high-resolution image of the pattern piece
+                  <p><strong>Automatic high-resolution image capture:</strong></p>
+                  <p>PeriTrace can automatically capture a high-resolution image of the pattern piece
                     during contour detection.</p>
                   <ul>
                     <li>
                       <p><strong>Automatically:</strong> Image capture is automatically triggered during contour
                         detection. You do not need to adjust the camera to a specific angle or perform any
-                        additional actions. The captured image is processed on-device and added to the pattern
+                        additional action. The captured image is processed on-device and added to the pattern
                         piece in the canvas.</p>
                     </li>
                     <li>
@@ -237,7 +272,7 @@
                   </ul>
                 </div>
                 <div class="sub-note important">
-                  <p><strong><i><u>NOTES:</u></i> </strong></p>
+                  <p><strong><i><u>NOTE:</u></i> </strong></p>
                   <p>By default, PeriTrace does not play a shutter sound when capturing a high-resolution
                     image. However, a shutter sound may still be played by the system depending on your device and
                     region.</p>
@@ -245,41 +280,6 @@
                 <br>
                 <p><strong><i><u>Finishing or Cancelling a Trace:</u></i> </strong> Proceed the same as you do when
                   tracing manually.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Q5 -->
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span class="faq-tag">Q05</span>
-            <span class="faq-q-text">Can I undo my trace actions?</span>
-            <span class="faq-marker" aria-hidden="true"></span>
-          </button>
-          <div class="faq-a-wrap">
-            <div class="faq-a-inner">
-              <div class="faq-a">
-                <p>When tracing a pattern piece, you can undo your last action by tapping the Undo <span
-                    class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> button at
-                  the bottom right of the screen.</p>
-                <p>You can also redo the undone action by tapping the Redo <span class="button btn-circle redo"><span
-                      class="material-symbols-outlined">redo</span></span> button next to the Undo <span
-                    class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> button.
-                </p>
-
-                <div class="sub-note">
-                  <p><strong><i><u>Undo/Redo all trace actions:</u></i> </strong></p>
-                  <p>Long-press the Undo or Redo <span class="button btn-circle undo"><span
-                        class="material-symbols-outlined">undo</span></span> <span class="button btn-circle redo"><span
-                        class="material-symbols-outlined">redo</span></span> button for 1.5 seconds to undo or redo all
-                    trace actions.</p>
-                </div>
-
-                <div class="sub-note important">
-                  <p><strong><i><u>NOTES:</u></i> </strong></p>
-                  <p>A contour detection action is counted as one action.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -318,7 +318,7 @@
                     captured pieces on top of each other on the canvas to find the average outline.</p>
                 </div>
                 <div class="sub-note important">
-                  <p><strong><i><u>NOTES:</u></i> </strong></p>
+                  <p><strong><i><u>NOTE:</u></i> </strong></p>
                   <p>A single pattern canvas can hold up to 40 pattern pieces. If your physical pattern has more than 40
                     pieces, split the project across multiple separate patterns on PeriTrace.</p>
                 </div>
@@ -331,6 +331,56 @@
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
             <span class="faq-tag">Q07</span>
+            <span class="faq-q-text">Can I undo my actions?</span>
+            <span class="faq-marker" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a-wrap">
+            <div class="faq-a-inner">
+              <div class="faq-a">
+                <p><strong>Undo and redo:</strong> Version 1.2 now supports undo and redo for canvas actions, in
+                  addition to tracing actions.</p>
+                <p>On the canvas and tracing screens, you can undo your last action by tapping the Undo <span
+                    class="button btn-circle undo"><span class="material-symbols-outlined">undo</span></span> button at
+                  the bottom-right of the screen.</p>
+                <p>You can also redo an undone action by tapping the Redo <span class="button btn-circle redo"><span
+                      class="material-symbols-outlined">redo</span></span> button.
+                </p>
+
+                <div class="sub-note important">
+                  <p><strong><i><u>NOTE:</u></i> </strong></p>
+                  <p>A contour detection action is counted as a single action.</p>
+                </div>
+
+                <div class="sub-note">
+                  <p><strong><i><u>Undo or redo all actions:</u></i> </strong></p>
+                  <p>Long-press the Undo <span class="button btn-circle undo"><span
+                        class="material-symbols-outlined">undo</span></span> or Redo <span
+                      class="button btn-circle redo"><span class="material-symbols-outlined">redo</span></span> button
+                    for 1 second to undo or redo all available actions.</p>
+                </div>
+
+                <div class="sub-note">
+                  <p><strong><i><u>Animated canvas actions:</u></i> </strong></p>
+                  <ul>
+                    <li>
+                      <p>Canvas actions such as dragging, rotating, and zooming are animated to help you follow changes
+                        to your pattern arrangement.</p>
+                    </li>
+                    <li>
+                      <p>When undoing or redoing all canvas actions, the animations play in reverse or forward sequence,
+                        respectively. Return to home screen to cancel the sequence.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-tag">Q08</span>
             <span class="faq-q-text">How do I export a pattern?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </button>
@@ -368,15 +418,19 @@
                   <div class="fmt-card"><b>SVG</b><span>Scalable vector graphics format. Best for web use or editing in
                       mainstream vector design programs.</span></div>
                 </div>
+                <div class="sub-note important">
+                  <p><strong><i><u>NOTE:</u></i> </strong></p>
+                  <p>Exported files include or exclude images according to their visibility on the canvas.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Q8 -->
+        <!-- Q9 -->
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span class="faq-tag">Q08</span>
+            <span class="faq-tag">Q09</span>
             <span class="faq-q-text">How do I subscribe for unlimited exports?</span>
             <span class="faq-marker" aria-hidden="true"></span>
           </button>
@@ -401,7 +455,7 @@
                   Settings.</p>
 
                 <div class="sub-note important">
-                  <p><strong><i><u>NOTES:</u></i> </strong></p>
+                  <p><strong><i><u>NOTE:</u></i> </strong></p>
                   <p>To access the paywall, ensure your pattern contains at least one pattern piece to enable the export
                     button. The link to the paywall is located in the export sheet.</p>
                 </div>
